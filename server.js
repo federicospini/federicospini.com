@@ -5,6 +5,5 @@ server = express.createServer();
 
 server
     .use(express.static(__dirname + '/public'))
-    // .listen(80);
-	.listen(3000);
+    .listen(80);
 
