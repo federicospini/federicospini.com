@@ -1,34 +1,139 @@
-body {
-	overflow: hidden;
+.canvas {
+	margin-top: 65px;
+	margin-right: 80px;
+	margin-left: 80px;
+	margin-bottom: 10;
+	height: 100%;
+	font-family: 'Cabin', sans-serif;
 }
 
-#paper {
-	margin: 0;
-	padding: 0;
+#text {
+	display: inline;
+/*	float: left;*/
 }
 
-#band1 {
+#text .brand {
+	font-size: 98px;
+	font-weight: 500;
+	margin-bottom: 60px;
+}
+
+#text p {
+	font-weight: 400;
+    font-size: 28px;
+	margin-bottom: 20px;
+}
+
+
+/*
+#text p:before {
+    content: "\279C";
+	margin-right: 16px;
+	color: #FFCC00;
+	font-size: 16px;
+	text-align: middle;
+}*/
+
+
+#picture {
+	display: inline;
 	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 35px;
-	border: none;
-	background-color: black;
-	z-index: 2;
+	top: 50px;
+	right: 100px;
+	width: 512px;
+	height: 512px;
+    background-color: white; 
+	background-image: url("../images/picture.jpg");
+    background-repeat: no-repeat;
+	background-position: center top, 0 0;
+	-o-background-size: contain; 
+	-moz-background-size: contain; 
+	-webkit-background-size: contain; 
+	background-size: contain;
 }
 
-#band2 {
-	position: absolute;
-	left: 0px;
-	top: 35px;
-	width: 100%;
-	height: 120px;
-	border: none;
-	background-color: gray;
-	-webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,.25);
-	-moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,.25);
-	box-shadow: 1px 1px 5px 1px rgba(0,0,0,.25);
-	z-index: 2;
+#footer {
+	bottom: 0;
+	margin: 80px 0px 20px 0px;
+}
 
+
+
+#contacts {
+	display: block;
+	padding-bottom : 0px;
+	margin-bottom: 0px;
+}
+
+#contacts .icon {
+	background-color: white; 
+    background-repeat: no-repeat;
+	background-position: center top, 0 0;
+	-o-background-size: contain; 
+	-moz-background-size: contain; 
+	-webkit-background-size: contain; 
+	background-size: contain;
+}
+
+.icon {
+	width: 42px;
+	height: 42px;
+	margin: 0px 8px 0px 8px;
+	float: left;
+}
+
+#gmail {
+	background-image: url("../images/contact_icons_bw/Gmail.png");
+}
+
+#twitter {
+	background-image: url("../images/contact_icons_bw/twitter.png");
+}
+
+#facebook {
+	background-image: url("../images/contact_icons_bw/facebook.png");
+}
+
+#linkedin {
+	background-image: url("../images/contact_icons_bw/linkedin.png");
+}
+
+.icon.over {
+    -webkit-animation: vibrate 100ms linear 10 alternate;
+    -moz-animation: vibrate 100ms linear 10 alternate;
+    -o-animation: vibrate 100ms linear 10 alternate;
+    animation: vibrate 100ms linear 10 alternate;
+}
+
+@-webkit-keyframes vibrate{
+    from {
+        -webkit-transform: rotate(-5deg);
+    }
+    to{
+        -webkit-transform: rotate(5deg);
+    }
+}
+@-moz-keyframes vibrate{
+    from {
+        -moz-transform: rotate(-5deg);
+    }
+    to{
+        -moz-transform: rotate(5deg);
+    }
+}
+@-o-keyframes vibrate{
+    from {
+        -o-transform: rotate(-5deg);
+    }
+    to{
+        -o-transform: rotate(5deg);
+    }
+}
+@keyframes vibrate{
+    from {
+        transform: rotate(-5deg);
+    }
+    to{
+        transform: rotate(5deg);
+    }
 }
