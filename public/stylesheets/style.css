@@ -15,12 +15,12 @@
 #text .brand {
 	font-size: 98px;
 	font-weight: 500;
-	margin-bottom: 60px;
+	margin-bottom: 85px;
 }
 
 #text p {
 	font-weight: 400;
-    font-size: 28px;
+  font-size: 28px;
 	margin-bottom: 20px;
 }
 
@@ -55,7 +55,7 @@
 
 #footer {
 	bottom: 0;
-	margin: 230px 0px 20px 0px;
+	margin: 210px 0px 20px 0px;
 }
 
 
@@ -100,48 +100,40 @@
 }
 
 .icon.over {
-    -webkit-animation: vibrate 85ms ease-in 50 alternate;
-    -moz-animation: vibrate 85ms ease-in 50 alternate;
-    -o-animation: vibrate 85ms ease-in 50 alternate;
-    animation: vibrate 85ms ease-in 50 alternate;
+    -webkit-animation: vibrate 85ms linear 20 alternate;
+    -moz-animation: vibrate 85ms linear 20 alternate;
+    -o-animation: vibrate 85ms linear 20 alternate;
+    animation: vibrate 85ms linear 20 alternate;
 }
 
 .icon.out {
-    -webkit-animation: vibrate 85ms ease-out 30 alternate;
-    -moz-animation: vibrate 85ms ease-out 30 alternate;
-    -o-animation: vibrate 85ms ease-out 30 alternate;
-    animation: vibrate 85ms ease-out 30 alternate;
+    -webkit-animation: vibrate 85ms ease-out 15 alternate;
+    -moz-animation: vibrate 85ms ease-out 15 alternate;
+    -o-animation: vibrate 85ms ease-out 15 alternate;
+    animation: vibrate 85ms ease-out 15 alternate;
 }
 
 @-webkit-keyframes vibrate{
-    from {
-        -webkit-transform: rotate(-10deg);
-    }
-    to{
-        -webkit-transform: rotate(10deg);
-    }
+    0%   { -webkit-transform: rotate(0deg); }
+    25%  { -webkit-transform: rotate(-10deg); }
+    75%  { -webkit-transform: rotate(+10deg); }
+    100% { -webkit-transform: rotate(0deg); }
 }
 @-moz-keyframes vibrate{
-    from {
-        -moz-transform: rotate(-10deg);
-    }
-    to{
-        -moz-transform: rotate(10deg);
-    }
+    0%   { -moz-transform: rotate(0deg); }
+    25%  { -moz-transform: rotate(-10deg); }
+    75%  { -moz-transform: rotate(+10deg); }
+    100% { -moz-transform: rotate(0deg); }
 }
 @-o-keyframes vibrate{
-    from {
-        -o-transform: rotate(-10deg);
-    }
-    to{
-        -o-transform: rotate(10deg);
-    }
+    0%   { -o-transform: rotate(0deg); }
+    25%  { -o-transform: rotate(-10deg); }
+    75%  { -o-transform: rotate(+10deg); }
+    100% { -o-transform: rotate(0deg); }
 }
 @keyframes vibrate{
-    from {
-        transform: rotate(-10deg);
-    }
-    to{
-        transform: rotate(10deg);
-    }
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(-10deg); }
+    75%  { transform: rotate(+10deg); }
+    100% { transform: rotate(0deg); }
 }
