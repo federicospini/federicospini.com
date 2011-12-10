@@ -41,20 +41,21 @@
 	top: 50px;
 	right: 100px;
 	width: 512px;
-	height: 512px;
-    background-color: white; 
+	height: 672px;
+  z-index: -1;
+  background-color: white;
 	background-image: url("../images/picture.jpg");
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
 	background-position: center top, 0 0;
-	-o-background-size: contain; 
-	-moz-background-size: contain; 
-	-webkit-background-size: contain; 
+	-o-background-size: contain;
+	-moz-background-size: contain;
+	-webkit-background-size: contain;
 	background-size: contain;
 }
 
 #footer {
 	bottom: 0;
-	margin: 80px 0px 20px 0px;
+	margin: 230px 0px 20px 0px;
 }
 
 
@@ -66,19 +67,19 @@
 }
 
 #contacts .icon {
-	background-color: white; 
+	background-color: white;
     background-repeat: no-repeat;
 	background-position: center top, 0 0;
-	-o-background-size: contain; 
-	-moz-background-size: contain; 
-	-webkit-background-size: contain; 
+	-o-background-size: contain;
+	-moz-background-size: contain;
+	-webkit-background-size: contain;
 	background-size: contain;
 }
 
 .icon {
 	width: 42px;
 	height: 42px;
-	margin: 0px 8px 0px 8px;
+	margin: 0px 16px 0px 0px;
 	float: left;
 }
 
@@ -99,41 +100,48 @@
 }
 
 .icon.over {
-    -webkit-animation: vibrate 100ms linear 10 alternate;
-    -moz-animation: vibrate 100ms linear 10 alternate;
-    -o-animation: vibrate 100ms linear 10 alternate;
-    animation: vibrate 100ms linear 10 alternate;
+    -webkit-animation: vibrate 85ms ease-in 50 alternate;
+    -moz-animation: vibrate 85ms ease-in 50 alternate;
+    -o-animation: vibrate 85ms ease-in 50 alternate;
+    animation: vibrate 85ms ease-in 50 alternate;
+}
+
+.icon.out {
+    -webkit-animation: vibrate 85ms ease-out 30 alternate;
+    -moz-animation: vibrate 85ms ease-out 30 alternate;
+    -o-animation: vibrate 85ms ease-out 30 alternate;
+    animation: vibrate 85ms ease-out 30 alternate;
 }
 
 @-webkit-keyframes vibrate{
     from {
-        -webkit-transform: rotate(-5deg);
+        -webkit-transform: rotate(-10deg);
     }
     to{
-        -webkit-transform: rotate(5deg);
+        -webkit-transform: rotate(10deg);
     }
 }
 @-moz-keyframes vibrate{
     from {
-        -moz-transform: rotate(-5deg);
+        -moz-transform: rotate(-10deg);
     }
     to{
-        -moz-transform: rotate(5deg);
+        -moz-transform: rotate(10deg);
     }
 }
 @-o-keyframes vibrate{
     from {
-        -o-transform: rotate(-5deg);
+        -o-transform: rotate(-10deg);
     }
     to{
-        -o-transform: rotate(5deg);
+        -o-transform: rotate(10deg);
     }
 }
 @keyframes vibrate{
     from {
-        transform: rotate(-5deg);
+        transform: rotate(-10deg);
     }
     to{
-        transform: rotate(5deg);
+        transform: rotate(10deg);
     }
 }
