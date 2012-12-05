@@ -1,9 +1,9 @@
-var express = require('express'),
-    server;
+var express = require('express');
+var server;
 
-server = express.createServer();
+server = express();
 
 server
     .use(express.static(__dirname + '/public'))
-    .listen(80);
+    .listen(9001);
 

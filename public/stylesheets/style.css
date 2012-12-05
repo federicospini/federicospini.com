@@ -1,3 +1,8 @@
+a:link {text-decoration: none}
+a:visited {text-decoration: none; color: rgb(60,60,60);}
+a:active {text-decoration: none}
+a:hover {text-decoration: none; color: gray;}
+
 .canvas {
 	margin-top: 65px;
 	margin-right: 80px;
