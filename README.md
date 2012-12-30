@@ -1,3 +1,3 @@
 # federicospini.com
 
-Pesonal page
+my geek personal page

@@ -1,6 +1,6 @@
 {
-    "name": "mypAGE"
-  , "version": "0.0.1"
+    "name": "federicospini.com"
+  , "version": "0.1.0"
   , "private": true
   , "dependencies": {
       "express": "*"

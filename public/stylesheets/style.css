@@ -1,144 +1,79 @@
-a:link {text-decoration: none}
-a:visited {text-decoration: none; color: rgb(60,60,60);}
+/*a:link {text-decoration: none; color: rgb(168,231,47);}
+a:visited {text-decoration: none; color: rgb(118, 181, 0);}*/
+a:link {text-decoration: none; color: rgb(105,218,239);}
+a:visited {text-decoration: none; color: rgb(75,188,209);}
 a:active {text-decoration: none}
-a:hover {text-decoration: none; color: gray;}
+a:hover {text-decoration: none; color: rgb(246,18,114);}
 
-.canvas {
-	margin-top: 65px;
-	margin-right: 80px;
-	margin-left: 80px;
-	margin-bottom: 10;
-	height: 100%;
-	font-family: 'Cabin', sans-serif;
+body {
+  /*font-family: 'Droid Sans Mono', sans-serif;*/
+  font-family: 'Oxygen Mono', monospace, sans-serif;
+  font-size: 22px;
+  line-height: 1.4;
+  color: rgb(143,144,138);
 }
 
-#text {
-	display: inline;
-/*	float: left;*/
+#container {
+  margin: 33px;
 }
 
-#text .brand {
-	font-size: 98px;
-	font-weight: 500;
-	margin-bottom: 85px;
+.bracket {
+  color: rgb(39,40,34);
 }
 
-#text p {
-	font-weight: 400;
-  font-size: 28px;
-	margin-bottom: 20px;
-}
-
-
-/*
-#text p:before {
-    content: "\279C";
-	margin-right: 16px;
-	color: #FFCC00;
-	font-size: 16px;
-	text-align: middle;
+/*.curly {
+  font-size: 48px;
+  font-weight: bold;
 }*/
 
-
-#picture {
-	display: inline;
-	position: absolute;
-	top: 50px;
-	right: 100px;
-	width: 512px;
-	height: 672px;
-  z-index: -1;
-  background-color: white;
-	background-image: url("../images/picture.jpg");
-  background-repeat: no-repeat;
-	background-position: center top, 0 0;
-	-o-background-size: contain;
-	-moz-background-size: contain;
-	-webkit-background-size: contain;
-	background-size: contain;
+.value {
+  color: rgb(39,40,34);
 }
 
-#footer {
-	bottom: 0;
-	margin: 210px 0px 20px 0px;
+.keyword {
+  color: rgb(105,218,239);
 }
 
-
-
-#contacts {
-	display: block;
-	padding-bottom : 0px;
-	margin-bottom: 0px;
+.indent-l1:before {
+  content: "\0000a0";
 }
 
-#contacts .icon {
-	background-color: white;
-    background-repeat: no-repeat;
-	background-position: center top, 0 0;
-	-o-background-size: contain;
-	-moz-background-size: contain;
-	-webkit-background-size: contain;
-	background-size: contain;
+.indent-l2:before {
+  content: "\0000a0\0000a0\0000a0";
 }
 
-.icon {
-	width: 42px;
-	height: 42px;
-	margin: 0px 16px 0px 0px;
-	float: left;
+.indent-close-l2:before {
+  content: "\0000a0\0000a0";
 }
 
-#gmail {
-	background-image: url("../images/contact_icons_bw/Gmail.png");
+.key:before, .value:before {
+  content: "\"";
+  color: rgb(143,144,138);
 }
 
-#twitter {
-	background-image: url("../images/contact_icons_bw/twitter.png");
+ .key:after {
+  content: "\":";
+  color: rgb(143,144,138);
+ }
+
+.value:after {
+ content: "\",";
+ color: rgb(143,144,138);
 }
 
-#facebook {
-	background-image: url("../images/contact_icons_bw/facebook.png");
+.value.last:after {
+  content: "\"";
 }
 
-#linkedin {
-	background-image: url("../images/contact_icons_bw/linkedin.png");
+.value.number:after,
+.value.classname:after,
+.value.link:after {
+  content: ",";
+  color: rgb(143,144,138);
 }
 
-.icon.over {
-    -webkit-animation: vibrate 85ms linear 20 alternate;
-    -moz-animation: vibrate 85ms linear 20 alternate;
-    -o-animation: vibrate 85ms linear 20 alternate;
-    animation: vibrate 85ms linear 20 alternate;
-}
-
-.icon.out {
-    -webkit-animation: vibrate 85ms ease-out 15 alternate;
-    -moz-animation: vibrate 85ms ease-out 15 alternate;
-    -o-animation: vibrate 85ms ease-out 15 alternate;
-    animation: vibrate 85ms ease-out 15 alternate;
-}
-
-@-webkit-keyframes vibrate{
-    0%   { -webkit-transform: rotate(0deg); }
-    25%  { -webkit-transform: rotate(-10deg); }
-    75%  { -webkit-transform: rotate(+10deg); }
-    100% { -webkit-transform: rotate(0deg); }
-}
-@-moz-keyframes vibrate{
-    0%   { -moz-transform: rotate(0deg); }
-    25%  { -moz-transform: rotate(-10deg); }
-    75%  { -moz-transform: rotate(+10deg); }
-    100% { -moz-transform: rotate(0deg); }
-}
-@-o-keyframes vibrate{
-    0%   { -o-transform: rotate(0deg); }
-    25%  { -o-transform: rotate(-10deg); }
-    75%  { -o-transform: rotate(+10deg); }
-    100% { -o-transform: rotate(0deg); }
-}
-@keyframes vibrate{
-    0%   { transform: rotate(0deg); }
-    25%  { transform: rotate(-10deg); }
-    75%  { transform: rotate(+10deg); }
-    100% { transform: rotate(0deg); }
+.value.number:before, .value.number.last:before,
+.value.classname:before, .value.classname.last:before,
+.value.link:before, .value.link:before {
+ content: "";
 }
