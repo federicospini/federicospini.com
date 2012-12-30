@@ -5,6 +5,10 @@ a:visited {text-decoration: none; color: rgb(75,188,209);}
 a:active {text-decoration: none}
 a:hover {text-decoration: none; color: rgb(246,18,114);}
 
+html, body {
+  overflow: hidden;
+}
+
 body {
   /*font-family: 'Droid Sans Mono', sans-serif;*/
   font-family: 'Oxygen Mono', monospace, sans-serif;
