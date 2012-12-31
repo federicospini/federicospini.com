@@ -5,10 +5,6 @@ a:visited {text-decoration: none; color: rgb(75,188,209);}
 a:active {text-decoration: none}
 a:hover {text-decoration: none; color: rgb(246,18,114);}
 
-html, body {
-  overflow: hidden;
-}
-
 body {
   /*font-family: 'Droid Sans Mono', sans-serif;*/
   font-family: 'Oxygen Mono', monospace, sans-serif;
@@ -65,10 +61,6 @@ body {
  color: rgb(143,144,138);
 }
 
-.value.last:after {
-  content: "\"";
-}
-
 .value.number:after,
 .value.classname:after,
 .value.link:after {
@@ -76,8 +68,22 @@ body {
   color: rgb(143,144,138);
 }
 
-.value.number:before, .value.number.last:before,
-.value.classname:before, .value.classname.last:before,
-.value.link:before, .value.link:before {
+.value.number:before,
+.value.classname:before,
+.value.link:before {
  content: "";
+}
+
+.object>div:last-child>span.value:after,
+.array>div:last-child>span.value:after {
+  content: "\"";
+}
+
+.object>div:last-child>span.number:after,
+.object>div:last-child>span.classname:after,
+.object>div:last-child>span.link:after,
+.array>div:last-child>span.number:after,
+.array>div:last-child>span.classname:after,
+.array>div:last-child>span.link:after {
+  content: "";
 }
