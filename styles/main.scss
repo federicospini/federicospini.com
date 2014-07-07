@@ -1,0 +1,250 @@
+$font-size: 18px;
+$line-padding: 4px;
+$line-height: 1.6;
+$ln-width: 55px;
+$line-number-width: 42px;
+$bg-color:#F8F8FF;
+$text-color: #272822;
+$selected-line-color: #FFFEF2 ;
+$line-number-bg-color: #DFDFE4;
+$line-number-alt-color: #8F908A;
+$text-color: #262626;
+$color-key: #8F908A;
+$color-value:  #272822;
+$color-value-number: #69DAEF;
+$color-value-link: #69DAEF;
+$color-value-link-visited: #69DAEF;
+$color-value-link-hover: #69DAEF;
+$color-punctuation: #8F908A;
+
+@mixin line-padding {
+  padding-top: $line-padding;
+  padding-bottom: $line-padding;
+}
+
+a:link { text-decoration: none; color: $color-value-link; }
+a:visited { text-decoration: none; color: $color-value-link-visited; }
+a:active {text-decoration: none}
+a:hover {text-decoration: none; color: $color-value-link-hover;}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: 'Oxygen Mono', monospace, sans-serif;
+  font-size: $font-size;
+  color: $text-color;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  vertical-align: middle;
+  min-height: 100%;
+  height: 100%;
+  line-height: $line-height;
+  overflow: auto;
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.flex-container,
+.row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+.flex-item:nth-child(1),
+.line-number {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+.flex-item:nth-child(2),
+.line-content {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
+  align-self: auto;
+}
+
+/*
+    Legacy Firefox implementation treats all flex containers
+    as inline-block elements.
+*/
+
+@-moz-document url-prefix() {
+  .flex-container {
+    width: 100%;
+    -moz-box-sizing: border-box;
+  }
+}
+
+#container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#ln {
+  position: fixed;
+  z-index: -10;
+  width: $ln-width;
+  top: 0px;
+  left: 0px;
+  background-color: $line-number-bg-color;
+  box-shadow: inset $line-number-alt-color -1px 0 0 0;
+  min-height: 100%;
+}
+
+.line-content {
+  padding-left: 5px;
+}
+
+.line-number {
+  width: $line-number-width;
+  padding-right: $ln-width - $line-number-width;
+  // background-color: $line-number-bg-color;
+  box-shadow: inset $line-number-alt-color -1px 0 0 0;
+  text-align: right;
+  color: #8F908A;
+}
+
+.row:hover > .line-content {
+  background-color: $selected-line-color;
+}
+
+.row:hover > .line-number {
+  background-color: #F0F0F5;
+  color: $text-color; 
+  box-shadow: 
+    inset -1px 0   0 $line-number-alt-color,
+    inset  0  -1px 0 $line-number-alt-color,
+    inset  0   1px 0 $line-number-alt-color;
+}
+
+.indent-l1:before {
+  content: "\0000a0";
+}
+
+.indent-l2:before {
+  content: "\0000a0\0000a0\0000a0";
+}
+
+.key:before, .value:before {
+  content: "\"";
+  color: $color-punctuation;
+}
+
+.value.number:before,
+.value.link:before {
+  content: "";
+}
+
+.value.no-quote:before {
+  content: "";
+}
+
+.key:after {
+  content: "\":";
+  color: $color-punctuation;
+}
+
+.key:after {
+  content: "\":";
+  color: $color-punctuation;
+}
+
+.value:after {
+ content: "\",";
+ color: $color-punctuation;
+}
+
+.value.number:after,
+.value.link:after, {
+ content: ",";
+ color: $color-punctuation;
+}
+
+.punctuation {
+  color: $color-punctuation;
+}
+
+.value.last:after {
+  content: "\"";
+}
+
+.value.link.last:after,
+.value.last.no-quote:after {
+  content: "";
+}
+
+.value.comma:after,
+.punctuation.comma:after {
+  content: ",";
+}
+
+.key {
+  color: $color-key;
+}
+
+.value {
+  color: $color-value;
+}
+
+.value.number {
+  color: $color-value-number;
+}
+
+a.value.link {
+  color: $color-value-link;
+}
